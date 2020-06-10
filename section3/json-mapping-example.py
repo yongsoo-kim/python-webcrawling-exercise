@@ -5,6 +5,26 @@ import requests, json
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding='utf-8')
 
+#
+# {
+#    "shopInfo":[
+#       {
+#          "id":111,
+#          "firstname":"John",
+#          "Lastname":"Snow",
+#          "status":true
+#       },
+#       {
+#          "id":222,
+#          "firstname":"John",
+#          "Lastname":"Snow",
+#          "status":false
+#       }
+#    ]
+# }
+#
+
+
 res = requests.get("http://localhost:3000/shops")
 res.raise_for_status()
 if res.ok:
